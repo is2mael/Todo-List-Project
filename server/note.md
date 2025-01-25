@@ -1,0 +1,1 @@
+npx sequelize-cli model:generate --name Task --attributes id:number,title:string,description:string,isCompleted:boolean
