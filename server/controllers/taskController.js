@@ -1,7 +1,10 @@
-exports.CreateTask = async (req, res) => {
-    try {
-        
-    } catch (err) {
-        console.log("🚀 ~ exports.CreateTask= ~ err:", err)
+class TaskController {
+    static async findAll(req, res, next) {
+        try {
+            
+        } catch (err) {
+            console.log("🚀 ~ TaskController ~ findAll ~ err:", err)
+            next(err)
+        }
     }
-} 
+}

@@ -14,16 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Task.init({
-    id: DataTypes.NUMBER,
+    id: DataTypes.INTEGER,
     title: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'Title cannot be null'
+          msg: 'Title is required'
         },
         notEmpty: {
-          msg: 'Title cannot be empty'
+          msg: 'Title is required'
         }
       }
     },
