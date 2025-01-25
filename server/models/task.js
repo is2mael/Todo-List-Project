@@ -14,24 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Task.init({
-    id: DataTypes.INTEGER,
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: 'Title is required'
-        },
-        notEmpty: {
-          msg: 'Title is required'
-        }
-      }
-    },
+    title: DataTypes.STRING,
     description: DataTypes.STRING,
-    isCompleted: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
-    }
+    isCompleted: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Task',
