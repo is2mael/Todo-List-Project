@@ -6,9 +6,9 @@ export default function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top w-full z-10 shadow-sm">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          {/* <Link className="navbar-brand" to="/">
             Todo-List
-          </Link>
+          </Link> */}
           <button
             className="navbar-toggler"
             type="button"
@@ -25,7 +25,7 @@ export default function Navbar() {
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
-                  Home
+                  Todo-List
                 </Link>
               </li>
               

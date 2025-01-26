@@ -67,7 +67,7 @@ export default function Home() {
     <>
       <div className="container mt-5">
         <div className="text-center pt-5">
-          <h1>Todo List</h1>
+          <h1>Make Your Day Awsome</h1>
         </div>
 
         <div className="d-flex justify-content-center mt-4">

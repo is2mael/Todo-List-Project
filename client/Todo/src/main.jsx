@@ -8,7 +8,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Nvabar.jsx";
 import CreateTodo from "./pages/Create Todo.jsx";
-// import Detail from "./pages/Detail.jsx";
+import Detail from "./pages/Detail.jsx";
+import Edit from "./pages/Edit.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,11 +29,19 @@ const router = createBrowserRouter([
     </>
   },
   {
-    path: "/Details",
+    path: "/detail/:id",
     element:
     <>
     <Navbar />,
-    {/* <Detail />, */}
+    <Detail />,
+    </>
+  },
+  {
+    path: "/edit/:id",
+    element:
+    <>
+    <Navbar />,
+    <Edit />
     </>
   }
 ]);

@@ -23,10 +23,10 @@ export default function Table({ todos, handleDelete }) {
               <td>{e.description}</td>
               <td>{e.isCompleted ? "Completed" : "Not Completed"}</td>
               <td>
-                <Link to="/detail">
+                <Link to={`/detail/${e.id}`}>
                   <button className="btn btn-info">Detail</button>
                 </Link>
-                <Link to={`/todo-list/${e.id}`}>
+                <Link to={`/edit/${e.id}`}>
                   <button className="btn btn-primary">Edit</button>
                 </Link>
                 <button

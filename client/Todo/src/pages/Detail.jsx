@@ -1,43 +1,45 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { instance } from "../utils/axios";
 
 export default function Detail() {
   const { id } = useParams();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [isCompleted, setIsCompleted] = useState(false);
+  const [isCompleted, setIsCompleted] = useState("");
 
-  const fetchTodoById = async () => {
+  const fetchTodoById = async (id) => {
     try {
       const response = await instance({
         method: "GET",
         url: `/todo-list/${id}`,
       });
-      console.log(response.task);
-      
+      console.log(response.data.task);
 
-      setTitle(response.task.title);
-      setDescription(response.task.description);
-      setIsCompleted(response.task.isCompleted);
+      setTitle(response.data.task.title);
+      setDescription(response.data.task.description);
+      setIsCompleted(response.data.task.isCompleted);
     } catch (error) {}
   };
 
   useEffect(() => {
-    fetchTodoById();
+    fetchTodoById(id);
   }, [id]);
 
   return (
-    <div className="card" style={{ width: "18rem" }}>
-      <img src="..." className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">{title}</h5>
-        <p className="card-text">
-          {description}
-        </p>
-        <a href="#" className="btn btn-primary">
-          Go somewhere
-        </a>
+    <div
+      className="container d-flex justify-content-center align-items-center pt-5 mt-5"
+      style={{ minHeight: "50vh" }}
+    >
+      <div className="card shadow" style={{ width: "25rem" }}>
+        <div className="card-body">
+          <h5 className="card-title">Aktivitas:{title}</h5>
+          <p className="card-text">Deskripsi: {description}</p>
+          <p className="card-text">Status: {isCompleted ? "Complete" : "Not Complete"}</p>
+          <Link to="/" className="btn btn-primary">
+            Back Home
+          </Link>
+        </div>
       </div>
     </div>
   );
