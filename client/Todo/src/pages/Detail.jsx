@@ -33,7 +33,7 @@ export default function Detail() {
     >
       <div className="card shadow" style={{ width: "25rem" }}>
         <div className="card-body">
-          <h5 className="card-title">Aktivitas:{title}</h5>
+          <h5 className="card-title">Aktivitas: {title}</h5>
           <p className="card-text">Deskripsi: {description}</p>
           <p className="card-text">Status: {isCompleted ? "Complete" : "Not Complete"}</p>
           <Link to="/" className="btn btn-primary">
