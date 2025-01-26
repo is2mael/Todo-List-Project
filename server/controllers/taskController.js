@@ -20,6 +20,9 @@ class TaskController {
         description,
         isCompleted
       });
+      if (!newTask) {
+        throw { name: "BadRequest", message: "Bad Request" };
+      }
       res.status(201).json({ newTask });
     } catch (err) {
       console.log("🚀 ~ TaskController ~ createTodo ~ err:", err);

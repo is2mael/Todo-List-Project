@@ -1,4 +1,5 @@
 const TaskController = require('../controllers/taskController')
+const errorHandler = require('../middlewares/errorhandling')
 
 const router = require('express').Router()
 
@@ -10,5 +11,7 @@ router.post('/todo-list', TaskController.createTodo)
 router.get('/todo-list/:id', TaskController.detail)
 router.put('/todo-list/:id', TaskController.update)
 router.delete('/todo-list/:id', TaskController.delete)      
+
+router.use(errorHandler)
 
 module.exports = router
